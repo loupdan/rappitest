@@ -1,0 +1,26 @@
+<header>
+      <section class="row">
+        <a class="col-xs-2 glyphicon glyphicon-align-justify" ng-click="getNews()">
+          
+        </a>
+      </section>
+</header>
+<ul>
+  <li ng-repeat="news in newscontent">
+    <section class="newsintro row" ng-click="expandNews = ! expandNews">
+      <div class="thumb col-xs-2 col-md-2 ">
+        <img src="{{newscontent[$index].image}}" alt="" class="img-circle img-responsive">
+      </div>
+      <h3 class="col-xs-10 col-md-10">{{newscontent[$index].title}}</h3>
+    </section>
+    <section class="content row" ng-show="expandNews" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+      <div class="newsimage col-xs-5 col-md-5">
+        <img src="{{newscontent[$index].image}}" alt="" class="img-responsive">
+      </div>
+      <div class="newstext col-xs-7 col-md-7">
+        <h3>{{newscontent[$index].title}}</h3>
+        <p>{{newscontent[$index].content}}</p>
+      </div>
+    </section>
+  </li>
+</ul>
